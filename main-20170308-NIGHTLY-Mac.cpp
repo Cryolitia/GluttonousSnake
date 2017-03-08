@@ -52,7 +52,11 @@ int main()
 int duqu()
 {
     char x;
+#ifdef win
+    x=getch();
+#else
     x=getchar();
+#endif
     shuru=x;
     return x;
 }
