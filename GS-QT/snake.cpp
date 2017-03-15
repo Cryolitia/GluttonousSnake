@@ -1,17 +1,18 @@
 #include "QThread"
 #include "QWidget"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 class snake : public QThread {
 public :
     int map[22][22];
-    char shuru,shuru1,last_shuru;
-    int length,ax,ay,head_x,head_y,tail_x,tail_y,score=0,i;
+    char shuru1;
+    int ax,ay,score=0;
     bool die = false;
-    struct guanxi{
-        int x,y;
-    }a[1001];
 
     void init () {
+        score=0;
         a[1].x=4;a[1].y=4;
         a[2].x=5;a[2].y=4;
         a[3].x=6;a[3].y=4;
@@ -21,7 +22,20 @@ public :
         last_shuru='w';
         shuru1 = 'w';
     }
-    void run (){
+    void run () {
+        while (!die) {
+            solve();
+            shuchu();
+            msleep(200);
+        }
+    }
+private:
+    char shuru,last_shuru;
+    int length,head_x,head_y,tail_x,tail_y,i;
+    struct guanxi{
+        int x,y;
+    }a[401];
+    void solve (){
           shuru=shuru1;
           map[ax][ay]=2;
           head_x=a[1].x;
@@ -124,5 +138,32 @@ public :
         else
           return 0;
     }
+    void shuchu()
+    {
+        system("cls");
+        int i,j;
+        for(i=1;i<=length;i++)
+        {
+          map[a[i].x][a[i].y]=1;
+        }
+        for(i=1;i<=22;i++)
+          cout<<"0";
+        cout<<endl;
+        for(i=2;i<=21;i++)
+        {
+          cout<<"0";
+          for(j=2;j<=21;j++)
+          {
+            if(map[i][j]==0) cout<<" ";
+            if(map[i][j]==1) cout<<"-";
+            if(map[i][j]==2) cout<<"#";
+          }
+          cout<<"0"<<endl;
+        }
+        for(i=1;i<=22;i++)
+          cout<<"0";
+        memset(map,0,sizeof(map));
+    }
+
 
 };

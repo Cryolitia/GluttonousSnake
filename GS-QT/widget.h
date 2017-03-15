@@ -2,6 +2,13 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "snake.cpp"
+#include "QTime"
+#include "QString"
+#include "QThread"
+#include "QPixmap"
+#include "QPainter"
+#include "QPoint"
 
 namespace Ui {
 class Widget;

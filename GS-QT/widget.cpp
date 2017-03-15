@@ -1,18 +1,26 @@
 #include "widget.h"
 #include "ui_widget.h"
-#include "snake.cpp"
-#include "QTime"
-#include "QString"
-#include "QThread"
 
 snake s;
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    s.init();
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
+    QPixmap pix(201,201);
+    QPainter painter(&pix);
+
+    pix.fill(Qt::white);
+    painter.setPen(Qt::black);
+    painter.setRenderHint(QPainter::Antialiasing,true);
+    painter.drawLine(QPoint(1,1),QPoint(1,200));
+    painter.drawLine(QPoint(0,0),QPoint(200,1));
+    painter.drawLine(QPoint(200,1),QPoint(200,200));
+    painter.drawLine(QPoint(1,200),QPoint(200,200));
+    painter.end();
+    ui->drawlabel->setPixmap(pix);
 }
 
 Widget::~Widget()
@@ -42,5 +50,7 @@ void Widget::on_down_clicked()
 
 void Widget::on_start_clicked()
 {
-        ui->start->setEnabled(false);
+    ui->start->setEnabled(false);
+    s.init();
+    s.start();
 }

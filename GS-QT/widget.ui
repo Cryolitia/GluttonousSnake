@@ -175,6 +175,19 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="drawlabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>201</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
