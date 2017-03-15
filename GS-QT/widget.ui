@@ -44,7 +44,7 @@
         <item>
          <widget class="QLabel" name="score">
           <property name="text">
-           <string>TextLabel</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -180,12 +180,28 @@
     <rect>
      <x>30</x>
      <y>30</y>
-     <width>201</width>
-     <height>201</height>
+     <width>211</width>
+     <height>211</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>260</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;    本软件由山东省实验中学高一·22班李子元、闫庆康独立开发。软件源码开放于https://github.com/singleNeuron/GluttonousSnake，允许非商业用途使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string>关于作者</string>
    </property>
   </widget>
  </widget>

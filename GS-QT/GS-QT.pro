@@ -25,8 +25,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         widget.cpp \
-    snake.cpp
+    sc.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    sc.h
 
 FORMS    += widget.ui

@@ -1,41 +1,36 @@
+#include "sc.h"
 #include "QThread"
-#include "QWidget"
-#include <iostream>
-using std::cout;
-using std::endl;
 
-class snake : public QThread {
-public :
-    int map[22][22];
-    char shuru1;
-    int ax,ay,score=0;
-    bool die = false;
+sc::sc(QObject *parent) : QThread()
+{
 
-    void init () {
+}
+
+void sc::init () {
         score=0;
-        a[1].x=4;a[1].y=4;
-        a[2].x=5;a[2].y=4;
-        a[3].x=6;a[3].y=4;
+        int initx=qrand()%17+2,inity=qrand()%19;
+        die=false;
+        a[1].x=initx;a[1].y=inity;
+        a[2].x=initx+1;a[2].y=inity;
+        a[3].x=initx+2;a[3].y=inity;
         length=3;
         ax=qrand()%19+2;
         ay=qrand()%19+2;
         last_shuru='w';
         shuru1 = 'w';
     }
-    void run () {
+void sc::run () {
         while (!die) {
             solve();
             shuchu();
+            emit updatesig();
+            memset(map,0,sizeof(map));
             msleep(200);
         }
+        emit diesig();
+        return;
     }
-private:
-    char shuru,last_shuru;
-    int length,head_x,head_y,tail_x,tail_y,i;
-    struct guanxi{
-        int x,y;
-    }a[401];
-    void solve (){
+void sc::solve (){
           shuru=shuru1;
           map[ax][ay]=2;
           head_x=a[1].x;
@@ -105,7 +100,7 @@ private:
               die=true;
             }
     }
-    void move()
+void sc::move()
     {
         int i;
         for(i=length;i>2;i--)
@@ -116,7 +111,7 @@ private:
         a[2].x=head_x;
         a[2].y=head_y;
     }
-    void eat()
+void sc::eat()
     {
         do
         {
@@ -124,7 +119,7 @@ private:
           ay=qrand()%19+2;
         }while(pd_apple()==1);
     }
-    int pd_apple()
+int sc::pd_apple()
     {
         int i,pd=0;
         for(i=1;i<=length;i++)
@@ -138,9 +133,8 @@ private:
         else
           return 0;
     }
-    void shuchu()
+void sc::shuchu()
     {
-        system("cls");
         int i,j;
         for(i=1;i<=length;i++)
         {
@@ -162,8 +156,4 @@ private:
         }
         for(i=1;i<=22;i++)
           cout<<"0";
-        memset(map,0,sizeof(map));
     }
-
-
-};

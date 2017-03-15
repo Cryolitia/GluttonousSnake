@@ -2,13 +2,14 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include "snake.cpp"
 #include "QTime"
 #include "QString"
 #include "QThread"
 #include "QPixmap"
 #include "QPainter"
 #include "QPoint"
+#include "sc.h"
+#include "QString"
 
 namespace Ui {
 class Widget;
@@ -35,6 +36,12 @@ private slots:
 
 private:
     Ui::Widget *ui;
+
+public slots:
+    void updateslot();
+
+    void dieslot();
+
 };
 
 #endif // WIDGET_H
