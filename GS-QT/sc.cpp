@@ -8,7 +8,7 @@ sc::sc(QObject *parent) : QThread()
 
 void sc::init () {
         score=0;
-        int initx=qrand()%17+2,inity=qrand()%19;
+        int initx=qrand()%17+2,inity=qrand()%19+2;
         die=false;
         a[1].x=initx;a[1].y=inity;
         a[2].x=initx+1;a[2].y=inity;
