@@ -16,13 +16,13 @@ public:
     explicit sc(QObject *parent = 0);
     int map[22][22];
     char shuru1;
-    int ax,ay,score=0;
+    int score=0,speed=200;
     bool die = false;
     void init ();
     void run () ;
-
+private:
     char shuru,last_shuru;
-    int length,head_x,head_y,tail_x,tail_y,i;
+    int length,head_x,head_y,tail_x,tail_y,i,ax,ay;
     struct guanxi{
         int x,y;
     }a[401];

@@ -13,45 +13,54 @@
   <property name="windowTitle">
    <string>贪吃蛇</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLabel" name="drawlabel">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>40</y>
-     <width>168</width>
-     <height>190</height>
+     <x>30</x>
+     <y>30</y>
+     <width>211</width>
+     <height>211</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>20</y>
+     <width>201</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <widget class="QPushButton" name="start">
+      <property name="text">
+       <string>开始</string>
+      </property>
+      <property name="shortcut">
+       <string>Return</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="start">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>开始</string>
-        </property>
-        <property name="shortcut">
-         <string>Return</string>
+         <string>得分：</string>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>得分：</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="score">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="score">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -176,37 +185,154 @@
       </item>
      </layout>
     </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QSlider" name="horizontalSlider">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置速度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>55</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用描边&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="linebutton">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置描边颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="snackButton">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置蛇身颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="foodbutton">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置食物颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="backbutton">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置背景颜色&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>33</width>
+          <height>29</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;    本软件由山东省实验中学高一·22班李子元、闫庆康独立开发。软件源码开放于https://github.com/singleNeuron/GluttonousSnake，允许非商业用途使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>关于作者</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="drawlabel">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>211</width>
-     <height>211</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>260</y>
-     <width>71</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;    本软件由山东省实验中学高一·22班李子元、闫庆康独立开发。软件源码开放于https://github.com/singleNeuron/GluttonousSnake，允许非商业用途使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="text">
-    <string>关于作者</string>
-   </property>
-  </widget>
+  <zorder>drawlabel</zorder>
+  <zorder>label_2</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>snackButton</zorder>
+  <zorder>foodbutton</zorder>
+  <zorder>backbutton</zorder>
+  <zorder>horizontalSpacer_6</zorder>
+  <zorder>horizontalSpacer_6</zorder>
+  <zorder>linebutton</zorder>
+  <zorder></zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

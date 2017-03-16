@@ -25,7 +25,7 @@ void sc::run () {
             shuchu();
             emit updatesig();
             memset(map,0,sizeof(map));
-            msleep(200);
+            msleep(speed);
         }
         emit diesig();
         return;

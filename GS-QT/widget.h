@@ -12,6 +12,9 @@
 #include "QString"
 #include "QEvent"
 #include "QKeyEvent"
+#include "QColor"
+#include "QIcon"
+#include "QColorDialog"
 
 namespace Ui {
 class Widget;
@@ -35,6 +38,20 @@ private slots:
     void on_down_clicked();
 
     void on_start_clicked();
+
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_spinBox_valueChanged(int arg1);
+
+    void on_checkBox_stateChanged(int arg1);
+
+    void on_linebutton_clicked();
+
+    void on_snackButton_clicked();
+
+    void on_foodbutton_clicked();
+
+    void on_backbutton_clicked();
 
 private:
     Ui::Widget *ui;
