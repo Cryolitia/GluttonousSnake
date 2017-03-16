@@ -1,5 +1,4 @@
 #include "sc.h"
-#include "QThread"
 
 sc::sc(QObject *parent) : QThread()
 {
@@ -18,6 +17,7 @@ void sc::init () {
         ay=qrand()%19+2;
         last_shuru='w';
         shuru1 = 'w';
+        qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     }
 void sc::run () {
         while (!die) {

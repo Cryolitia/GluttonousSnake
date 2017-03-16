@@ -10,6 +10,8 @@
 #include "QPoint"
 #include "sc.h"
 #include "QString"
+#include "QEvent"
+#include "QKeyEvent"
 
 namespace Ui {
 class Widget;
@@ -41,6 +43,7 @@ public slots:
     void updateslot();
 
     void dieslot();
+
 
 };
 

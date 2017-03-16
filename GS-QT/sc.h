@@ -4,6 +4,7 @@
 #include <QObject>
 #include "QThread"
 #include "QWidget"
+#include "QTime"
 #include <iostream>
 using std::cout;
 using std::endl;
