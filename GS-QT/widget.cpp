@@ -190,7 +190,7 @@ void Widget::on_linebutton_clicked()
 
 void Widget::on_snackButton_clicked()
 {
-    snackcolor=QColorDialog::getColor(Qt::black, this, tr("设置描边颜色"), QColorDialog::ShowAlphaChannel);
+    snackcolor=QColorDialog::getColor(Qt::black, this, tr("设置蛇身颜色"), QColorDialog::ShowAlphaChannel);
     QPixmap tmpcolor(50,50);
     QIcon tmpicon;
     tmpcolor.fill(snackcolor);
@@ -200,7 +200,7 @@ void Widget::on_snackButton_clicked()
 
 void Widget::on_foodbutton_clicked()
 {
-    foodcolor=QColorDialog::getColor(Qt::white, this, tr("设置描边颜色"), QColorDialog::ShowAlphaChannel);
+    foodcolor=QColorDialog::getColor(Qt::white, this, tr("设置食物颜色"), QColorDialog::ShowAlphaChannel);
     QPixmap tmpcolor(50,50);
     QIcon tmpicon;
     tmpcolor.fill(foodcolor);
@@ -210,7 +210,7 @@ void Widget::on_foodbutton_clicked()
 
 void Widget::on_backbutton_clicked()
 {
-    background=QColorDialog::getColor(Qt::white, this, tr("设置描边颜色"));
+    background=QColorDialog::getColor(Qt::white, this, tr("设置背景颜色"));
     QPixmap tmpcolor(50,50);
     QIcon tmpicon;
     tmpcolor.fill(background);
